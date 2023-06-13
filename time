@@ -1,0 +1,34 @@
+class Time:
+    def __init__(self, nome, jogadores):
+        self.nome = nome
+        self.jogadores = jogadores
+    
+    def adiciona_jogador(self, nome, camisa):
+        novo_jogador = [nome, camisa]
+        self.jogadores.append(novo_jogador)
+    
+    def imprime_jogadores(self):
+        print(f"Jogadores do time {self.nome}:")
+        for jogador in self.jogadores:
+            nome, camisa = jogador
+            print(f"Nome: {nome} - Camisa: {camisa}")
+
+
+
+jogadores = [["João", 10], ["Maria", 7], ["Pedro", 3]]
+time = Time("Time A", jogadores)
+time.imprime_jogadores()
+# Saída:
+# Jogadores do time Time A:
+# Nome: João - Camisa: 10
+# Nome: Maria - Camisa: 5
+# Nome: Pedro - Camisa: 3
+
+time.adiciona_jogador("Carlos", 9)
+time.imprime_jogadores()
+# Saída:
+# Jogadores do time Time A:
+# Nome: João - Camisa: 10
+# Nome: Maria - Camisa: 5
+# Nome: Pedro - Camisa: 3
+# Nome: Carlos - Camisa: 9
