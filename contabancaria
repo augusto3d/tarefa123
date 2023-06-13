@@ -1,0 +1,36 @@
+class ContaBancaria:
+    def __init__(self, numero_conta, nome_titular, saldo=0.0):
+        self.numero_conta = numero_conta
+        self.nome_titular = nome_titular
+        self.saldo = saldo
+    
+    def depositar(self, valor):
+        if valor > 0:
+            self.saldo += valor
+            print(f'Depósito de R${valor:.2f} realizado com sucesso.')
+        else:
+            print('Valor inválido. O depósito deve ser maior que zero.')
+    
+    def sacar(self, valor):
+        if valor <= self.saldo:
+            self.saldo -= valor
+            print(f'Saque de R${valor:.2f} realizado com sucesso.')
+        else:
+            print('Saldo insuficiente para realizar o saque.')
+    
+    def imprimir_saldo(self):
+        print(f'Saldo atual da conta: R${self.saldo:.2f}')
+
+
+
+conta = ContaBancaria('123456', 'João da Silva', 100.0)
+conta.imprimir_saldo()  
+
+conta.depositar(50.0) 
+conta.imprimir_saldo()  
+
+conta.sacar(30.0)  
+conta.imprimir_saldo()  
+
+conta.sacar(200.0)  
+conta.imprimir_saldo() 
